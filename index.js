@@ -35,10 +35,23 @@ app.use(
 app.use('/ariang', express.static(__dirname + '/ariang'))
 app.get('/', (req, res) => {
 	res.send(`
-<label for="secret">User ID:</label>
-<input id="secret" type="text">
-<button id="panel">Go to C panel</button>
-<button id="downloads">View downloaded files</button>
+	<div class="col d-flex justify-content-center " >
+	<div class="card border-secondary mb-3" style="max-width: 40rem;">
+		<div class="card-header">Upload Center</div>
+		<div class="card-body text-secondary">
+		   
+			<div>
+				<div><label for="image_file">User ID : </label></div>
+				<div><input name="title" id="secret" class="form-control" type="text" require></div>
+			</div>
+			<div style="padding-top: 20px;">
+				<input name="button" id="panel" type="button" value="Cpanel" class="btn btn-outline-warning" />
+				<input name="button" id="downloads" type="button" value="File Manager" class="btn btn-outline-danger" /></a>
+			</div>
+			
+		</div>
+	</div>
+</div>
 <script>
 panel.onclick=function(){
 	open('/ariang/#!/settings/rpc/set/wss/'+location.hostname+'/443/jsonrpc/'+btoa(secret.value),'_blank')
